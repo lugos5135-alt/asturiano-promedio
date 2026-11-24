@@ -11,7 +11,7 @@
 /* Identidad, tipografía y espaciado */
 @font-face{font-family:Montserrat;src:url(https://d3syewzhvzylbl.cloudfront.net/fonts/google-fonts/montserrat/regular.woff2) format("woff2");font-display:swap}
 @font-face{font-family:Montserrat;src:url(https://d3syewzhvzylbl.cloudfront.net/fonts/google-fonts/montserrat/800.woff2) format("woff2");font-weight:800;font-display:swap}
-:root{--ink:#10273b;--deep:#0d3152;--blue:#014d82;--ice:#e6f3ff;--pink:#ffd9e8;--paper:#fcfbf8;--line:#b4cfdf;--space:clamp(4.5rem,9vw,9rem)}
+:root{--ink:#10273b;--deep:#014d82;--blue:#014d82;--ice:#e6f3ff;--sky:#57b5ff;--paper:#f7f9ff;--line:#b4cfdf;--space:clamp(4.5rem,9vw,9rem)}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.65 Montserrat,system-ui,sans-serif}
@@ -39,7 +39,7 @@ nav a:hover{text-decoration:underline}
 .btn:hover{transform:translateY(-2px);box-shadow:0 9px 20px #10273b20}
 .btn:active{transform:scale(.97)}
 .btn.secondary{background:transparent;color:var(--ink);border-color:var(--ink)}
-.btn.pink{background:var(--pink);color:var(--ink)}
+.btn.sky{background:var(--sky);color:var(--ink)}
 .kicker{font-size:.75rem;font-weight:800;letter-spacing:.125em;text-transform:uppercase;margin-bottom:.9rem}
 .intro{max-width:58ch;margin-top:1.15rem}
 .split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,6vw,7rem);align-items:center}
@@ -48,7 +48,7 @@ nav a:hover{text-decoration:underline}
 .hero h1 span{color:var(--blue)}
 .hero .actions{margin-top:1.8rem}
 .hero-visual{position:relative;isolation:isolate;display:grid;align-items:end;margin:0}
-.hero-visual::before{content:"";position:absolute;z-index:-1;inset:8% 0 0;background:radial-gradient(ellipse,#8acabf00 20%,#a9d6ff 62%,transparent 73%);animation:halo 8s ease-in-out 2 alternate both;pointer-events:none}
+.hero-visual::before{content:"";position:absolute;z-index:-1;inset:8% 0 0;background:radial-gradient(ellipse,transparent 20%,#a9d6ff 62%,transparent 73%);animation:halo 8s ease-in-out 2 alternate both;pointer-events:none}
 @keyframes halo{to{transform:translate(8%,-6%) scale(1.12);opacity:.65}}
 .hero-visual img{width:100%;max-height:620px;object-fit:contain;object-position:center bottom;mask-image:radial-gradient(ellipse 72% 74% at 50% 49%,#000 58%,transparent 100%)}
 .hero-visual figcaption{display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;margin-top:.65rem;font-size:.8rem}
@@ -85,14 +85,14 @@ summary svg{width:42px;aspect-ratio:1;background:var(--ice);border-radius:50%;pa
 .media img,.media video{width:100%;object-fit:contain}
 .media video{aspect-ratio:16/10;background:#061b2c}
 .media figcaption{margin-top:.7rem;font-weight:800}
-.work a{display:inline-block;margin-top:2rem;color:var(--pink);font-weight:800}
+.work a{display:inline-block;margin-top:2rem;color:var(--sky);font-weight:800}
 .testimonials{background:var(--paper)}
 .quotes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(1rem,3vw,2rem);align-items:start}
 .quotes img{width:100%;height:auto}
 .quotes a{transition:transform .25s}
 .quotes a:hover{transform:translateY(-4px)}
 /* Formulario local con copia del mensaje y salida a Instagram. */
-.contact{background:var(--pink)}
+.contact{background:var(--sky)}
 .contact .split{align-items:start}
 form{display:grid;gap:.95rem;background:#fff;padding:clamp(1.15rem,3vw,2.15rem);border-radius:1.5rem}
 label{display:grid;gap:.3rem;font-size:.9rem;font-weight:800}
@@ -108,6 +108,34 @@ form[hidden],#message-preview[hidden]{display:none}
 @media(max-width:720px){.split,.solution-layout,.media{grid-template-columns:1fr}.hero-visual img{max-height:380px}.nav nav{order:2;width:100%}}
 @media(max-width:380px){.method{grid-template-columns:1fr}.btn{padding-inline:.95rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.btn:hover,.quotes a:hover{transform:none}}
+
+/* Tarjetas para contenido, medios abiertos para el portafolio. */
+.hero{background:linear-gradient(145deg,#f7f9ff 20%,#e6f3ff 58%,#c9e7ff)}
+.hero-visual{transform:translateY(var(--portrait-drift,0px))}
+.approach .copy{padding:clamp(1.4rem,4vw,3rem);background:white;border-radius:2rem;box-shadow:0 15px 45px #014d8211}
+.solutions .solution-layout{grid-template-columns:1fr;gap:0}
+.solutions .section-head{max-width:46rem}
+.service-list{grid-template-columns:repeat(3,minmax(0,1fr));align-items:start;gap:1rem}
+.service-list details{min-width:0;border:0;box-shadow:0 7px 28px #014d8212;background:#fff;transition:translate .22s,box-shadow .22s}
+.service-list details[open]{grid-column:span 2;background:#fff}
+.service-list summary{min-height:5.2rem}
+.service-list summary span{overflow-wrap:anywhere}
+.service-list summary svg{background:#e0f2ff}
+.service-list details:nth-child(3n+2) summary svg{background:#cfeaff}
+.method{align-items:start}
+.method li{border:0;box-shadow:0 12px 30px #014d8212;transition:translate .22s}
+.method li:nth-child(even){margin-top:2rem;background:#e6f3ff}
+.work .media{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);column-gap:clamp(1rem,7vw,7rem);row-gap:clamp(2rem,6vw,6rem)}
+.work figure:nth-child(even){margin-top:clamp(1rem,5vw,5rem)}
+.work figure video{background:transparent}
+.contact{background:linear-gradient(135deg,#e6f3ff,#cceaff)}
+.btn.sky{color:#082b4b}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+.service-list details:hover,.method li:hover{translate:0 -4px}
+.service-list details:active{translate:0 1px}
+}
+@media(max-width:950px){.service-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:720px){.service-list,.work .media{grid-template-columns:minmax(0,1fr)}.service-list details[open]{grid-column:auto}.work figure:nth-child(even),.method li:nth-child(even){margin-top:0}}
 </style>
 </head>
 <body>
@@ -145,6 +173,20 @@ if (motion.matches && 'IntersectionObserver' in window) {
     }, { threshold: 0.15 });
     document.querySelectorAll('.section-head, .approach h2, .method, .hero-visual').forEach(item => observer.observe(item));
 }
+
+// El retrato se mueve suavemente dentro del bloque inicial.
+const hero = document.querySelector('.hero');
+let portraitFrame = 0;
+function updatePortrait() {
+    portraitFrame = 0;
+    const offset = motion.matches ? Math.min(36, Math.max(0, -hero.getBoundingClientRect().top) * .08) : 0;
+    hero.style.setProperty('--portrait-drift', offset + 'px');
+}
+function schedulePortrait() {
+    if (!portraitFrame) portraitFrame = requestAnimationFrame(updatePortrait);
+}
+addEventListener('scroll', schedulePortrait, { passive: true });
+motion.addEventListener('change', schedulePortrait);
 
 // Preselecciona el servicio consultado y prepara el mensaje de forma local.
 const form = document.querySelector('#brief');
