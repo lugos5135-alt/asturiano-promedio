@@ -31,13 +31,40 @@ article:hover,.quotes a:hover,.projects figure:hover{transform:translateY(-4px);
 @keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 @media(prefers-reduced-motion:no-preference){.hero .wrap>div{animation:rise .62s ease-out both}.entered{animation:rise .55s ease-out both}}
 @media(prefers-reduced-motion:reduce){*,*::before{transition:none!important;animation:none!important}}
+
+/* Dark opening, framed media and structured sections. */
+:root{--deep:#082b4b;--surface:#f4f8fd;--stroke:#d6e4f2}
+header{background:var(--deep);border-color:#ffffff26;color:white}
+header a{color:white}
+header nav{align-items:center}
+header .nav-cta{background:#acdfff;color:var(--deep);padding:.53rem .85rem;border-radius:7px}
+.hero{background:radial-gradient(ellipse at 85% 25%,#1466a2 0,transparent 58%),var(--deep);border-bottom:4px solid var(--sky)}
+.hero::before{background:linear-gradient(90deg,#a6d9ff17 1px,transparent 1px),linear-gradient(#a6d9ff17 1px,transparent 1px);background-size:68px 68px;mask-image:linear-gradient(90deg,transparent,#000)}
+.hero .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1fr);padding-block:clamp(3rem,8vw,8rem)}
+.hero h1{font-size:clamp(2.8rem,6vw,5.6rem)}
+.hero p:not(.eyebrow){max-width:47ch;color:#e1efff}
+.hero .btn:not(.outline){background:#acdfff;color:var(--deep)}
+.hero-frame{transform:translate3d(0,var(--image-shift,0px),0);background:#0c365c;border:1px solid #b9e1ff55;box-shadow:0 24px 60px #001c38a0;padding:10px}
+.hero-frame img{border-radius:8px;box-shadow:none;aspect-ratio:4/3;max-height:440px;object-fit:contain}
+.hero-frame figcaption{color:#e1efff;font-size:.78rem;padding:.8rem .3rem .25rem}
+.editorial{background:var(--surface);border-bottom:1px solid var(--stroke)}
+#servicios .grid{gap:0;border:1px solid var(--stroke);background:var(--stroke);gap:1px;border-radius:14px;overflow:hidden}
+#servicios article{border:0;border-radius:0;padding:clamp(1.3rem,3vw,2.4rem);min-width:0}
+#servicios article:hover{transform:none;box-shadow:none;background:#f4f8fd}
+.projects{background:var(--deep);color:white}
+.projects .eyebrow,.projects .section-head p{color:#cde8ff}
+.projects figure{background:#112f50;border-color:#b9e1ff44}
+.projects figcaption{color:white}
+.projects .btn{background:#acdfff;color:var(--deep)}
+.contact{background:linear-gradient(110deg,var(--deep),var(--navy))}
+@media(max-width:790px){.hero .wrap{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 <body>
 <a class="skip" href="#contenido">Saltar al contenido</a>
-<header><div class="wrap"><a class="brand" href="#inicio"><img src="https://d1yei2z3i6k35z.cloudfront.net/14063433/68a1e20b7dc1c_fotoperfillinkedin.png" alt="">Asturiano Promedio</a><nav aria-label="Principal"><a href="#servicios">Servicios</a><a href="#proyectos">Proyectos</a><a href="#testimonios">Testimonios</a><a href="#sobre-mi">Sobre mí</a><a href="#contacto">Contacto</a></nav></div></header>
+<header><div class="wrap"><a class="brand" href="#inicio"><img src="https://d1yei2z3i6k35z.cloudfront.net/14063433/68a1e20b7dc1c_fotoperfillinkedin.png" alt="">Asturiano Promedio</a><nav aria-label="Principal"><a href="#servicios">Servicios</a><a href="#proyectos">Proyectos</a><a href="#testimonios">Testimonios</a><a href="#sobre-mi">Sobre mí</a><a class="nav-cta" href="#contacto">Hablemos ↗</a></nav></div></header>
 <main id="contenido">
-<section class="hero" id="inicio"><div class="wrap"><div><p class="eyebrow">Marketing On The Way · Asturias</p><h1>Es tu potencial. <span>¡Aprovéchalo!</span></h1><p>Imagina que alguien descubre hoy tu negocio. ¿Qué quieres que recuerde mañana? Te ayudo a darle forma con estrategia, diseño y vídeo.</p><div class="actions"><a class="btn" href="#contacto">Hablemos de tu proyecto ↗</a><a class="btn outline" href="#proyectos">Mira cómo lo hago ↓</a></div></div><img src="https://d1yei2z3i6k35z.cloudfront.net/14063433/6987ccb00050b_Dise%C3%B1osint%C3%ADtulo5.png" alt="Imagen de marca de Asturiano Promedio"></div></section>
+<section class="hero" id="inicio"><div class="wrap"><div><p class="eyebrow">Marketing On The Way · Asturias</p><h1>Es tu potencial. <span>¡Aprovéchalo!</span></h1><p>Imagina que alguien descubre hoy tu negocio. ¿Qué quieres que recuerde mañana? Te ayudo a darle forma con estrategia, diseño y vídeo.</p><div class="actions"><a class="btn" href="#contacto">Hablemos de tu proyecto ↗</a><a class="btn outline" href="#proyectos">Mira cómo lo hago ↓</a></div></div><figure class="hero-frame"><img src="https://d1yei2z3i6k35z.cloudfront.net/14063433/6987ccb00050b_Dise%C3%B1osint%C3%ADtulo5.png" alt="Imagen de marca de Asturiano Promedio"><figcaption>Asturiano Promedio · Marketing On The Way</figcaption></figure></div></section>
 <section class="editorial" aria-labelledby="pregunta"><div class="wrap"><p class="eyebrow">Antes de seguir</p><h2 id="pregunta">Si esta fuera tu web, ¿qué querrías que hiciera quien acaba de llegar?</h2><div class="actions"><a class="btn" href="#servicios">Que descubra mis servicios ↓</a><a class="textlink" href="#proyectos">Que vea lo que sé hacer ↓</a></div></div></section>
 <section id="servicios"><div class="wrap"><div class="section-head"><h2>Mis servicios</h2><p>Contrata un servicio puntual o reúne varias áreas en un mismo proyecto.</p></div><div class="grid"><article><span class="index">01</span><h3>Marketing digital</h3><p>Google Ads, Meta Ads, SEO y analítica para captar clientes y medir qué funciona.</p><a href="#contacto">Consultar servicio ↗</a></article><article><span class="index">02</span><h3>Redes sociales</h3><p>Estrategia, calendario, diseño de publicaciones y gestión de comunidad.</p><a href="#contacto">Consultar servicio ↗</a></article><article><span class="index">03</span><h3>Branding</h3><p>Identidad visual, dirección creativa y narrativa para una marca coherente.</p><a href="#contacto">Consultar servicio ↗</a></article><article><span class="index">04</span><h3>Marca personal</h3><p>Posicionamiento, contenido y optimización de perfiles en LinkedIn.</p><a href="#contacto">Consultar servicio ↗</a></article><article><span class="index">05</span><h3>Producción audiovisual</h3><p>Vídeo, fotografía, edición y tomas aéreas para productos, negocios y eventos.</p><a href="#contacto">Consultar servicio ↗</a></article><article><span class="index">06</span><h3>Web y visibilidad local</h3><p>Webs, landing pages, catálogos y optimización de tu ficha de Google Maps.</p><a href="#contacto">Consultar servicio ↗</a></article></div></div></section>
 <section class="tint"><div class="wrap"><div class="section-head"><h2>Packs para negocios</h2><p>Consulta el contenido de cada pack y escríbeme para valorar cuál encaja con tu negocio.</p></div><div class="media"><figure><a href="https://d1yei2z3i6k35z.cloudfront.net/14063433/699b88652bd6c_PACKNEGOCIOS4.png"><img src="https://d1yei2z3i6k35z.cloudfront.net/14063433/699b88652bd6c_PACKNEGOCIOS4.png" alt="Ficha del pack para negocios 1" loading="lazy"><figcaption>Ver detalles del pack ↗</figcaption></a></figure><figure><a href="https://d1yei2z3i6k35z.cloudfront.net/14063433/699b88760e96f_PACKNEGOCIOS3.png"><img src="https://d1yei2z3i6k35z.cloudfront.net/14063433/699b88760e96f_PACKNEGOCIOS3.png" alt="Ficha del pack para negocios 2" loading="lazy"><figcaption>Ver detalles del pack ↗</figcaption></a></figure></div></div></section>
